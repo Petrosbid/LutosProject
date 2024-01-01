@@ -1,0 +1,89 @@
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    /* margin-top: 1rem; */
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.12rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  /* .text {
+    color: #f2f2f2;
+    font-size: 1rem;
+    padding: .5rem .75rem;
+    position: absolute;
+    bottom: .5rem;
+    width: 100%;
+    text-align: center;
+  } */
+  
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    height: 20%;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  .continer__image--slider{
+    height: 28rem;
+    width: 100%;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 480px) {
+    .prev, .next,.text {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+    .continer__image--slider{
+        margin-top: .8rem;
+        height: 22rem;
+    }
+  }

@@ -1,0 +1,143 @@
+﻿@page
+@using WebApplication1.Component
+@using WebApplication1.productAPI
+@model IndexModel
+@{
+	ViewData["Title"] = "بدلیجات لوتوس";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="بدلیجات لوتوس از سال 400 به صورت حرفه ای کار خود را شروع کرده و همواره اعتماد مشتری را سرلوحه کار خود قرار داده">
+	<meta name="keywords" content="ست کامل,نیم ست,گوشواره,پیرسینگ,گردنبند,زنجیر,دستبند,النگو,انگشتر,پابند,پلاک,سنجاق سینه,برندها">
+	<meta http-equiv="expires" content="86400">
+	<meta name="subject" content="بدلیجات" />
+	<!-- <meta name="url" content="#" /> -->
+	<link rel="stylesheet" href="./css/Var.css">
+	<link rel="stylesheet" href="./css/Var.css/reset.css">
+	<link rel="shortcut icon" href="./Logo/lutos_prev_ui.ico" />
+	<link rel="stylesheet" href="./font/font.css">
+	<link rel="stylesheet" href="./css/SliderStyle.css">
+	<link rel="stylesheet" href="./css/popular-products.css">
+	<link rel="stylesheet" href="./css/products.css">
+	<link rel="stylesheet" href="./css/footer-style.css">
+	<link rel="stylesheet" href="./css/header-style.css">
+	
+
+</head>
+<body>
+	<!-- <div class="scroll--width"></div> -->
+	<!-- Mobile Style -->
+	<div class="categorys--continer--phone">
+		<img class="logo--bras--phone" src="./Logo/images.jpg" alt="">
+		@if (Model.CategoryProducts != null)
+		{
+			@foreach (var category in Model.CategoryProducts)
+			{
+				<a href="#" class="box--categorys"><div class="catgorys__product--phone">@category.Category</div></a>
+
+			}
+		}
+	</div>
+
+	<div class="image--cover"></div>
+
+
+
+
+
+	<div class="categorys">
+		@if (Model.CategoryProducts != null)
+		{
+			@foreach (var category in Model.CategoryProducts)
+			{
+
+				<a href="#" class="catgorys__product">@category.Category</a>
+			}
+		}
+		<a href="#" class="catgorys__product">برندها</a> 
+	</div>
+
+
+	<div class="slideshow-container">
+		@if (Model.SlideProducts != null)
+		{
+			@foreach (var slideproduct in Model.SlideProducts)
+			{
+				<div class="mySlides fade">
+					<div class="numbertext">1 / 4</div>
+					<img alt="This is image" class="continer__image--slider" src="@slideproduct.Main_Image">
+					@* <div class="text">Caption Text</div> *@
+				</div>
+			}
+		}
+		<a class="prev" onclick="plusSlides(-1)">❮</a>
+		<a class="next" onclick="plusSlides(1)">❯</a>
+	</div>
+	<br>
+	<div class="dot--continer" style="text-align:center">
+
+	</div>
+	<br>
+
+	<main>
+		<section class="products">
+			<h1 class="title products--title">محصولات</h1>
+			<div class="products__continer">
+				@if (Model.CategoryProducts != null)
+				{
+					@foreach (var category in Model.CategoryProducts)
+					{
+						@if (category.Category != null && category.Category != "")
+						{
+							<div class="box--product">
+								<a href="#" class="link--product">
+									<img class="img--product" src="@Model.SelectByCategory(category.Category)" alt="This is Product">
+									<span class="name--product">@category.Category</span>
+								</a>
+							</div>
+						}
+					}
+				}
+			</div>
+		</section>
+	</main>
+
+	<br>
+	<br>
+	<br>
+	<section class="popular">
+		<div class="popular--continer">
+			<h2 class="title popular--title">محبوب ترین ها</h2>
+
+
+
+			<div class="popular--products">
+				<div class="slider">
+					<div class="slide" id="slide">
+						<!-- <a class="item" href="#"><img class="popular--products__image" src="./testimage/15.PNG"><span class="popular--products__discription">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در همه</span><br><br><span class="popular--products__price">170 تومان</span></a>
+						<a class="item" href="#"><img class="popular--products__image" src="./testimage/Background.jpg"><span class="popular--products__discription">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در همه</span><br><span class="popular--products__price"></span></a>-->
+					</div>
+				</div>
+				<div class="btn">
+
+					<button class="ctrl-btn pro-prev"><</button>
+					<button class="ctrl-btn pro-next">></button>
+				</div>
+
+
+			</div>
+
+		</div>
+	</section>
+
+
+	<script src="./js/headerScript.js"></script>
+	<script src="./js/SliderScript.js"></script>
+	<script src="./js/popular-productsScript.js"></script>
+</body>
+</html>

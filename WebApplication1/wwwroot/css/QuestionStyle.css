@@ -1,0 +1,155 @@
+.question--continer{
+    width: 100%;
+    height: 93.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.q{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.question{
+    display: flex;
+    width: 100%;
+    min-height: 3rem;
+    background-color: var(--footer-BackGround-color);
+    margin: 1rem 0;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.question{
+    font-size: larger;
+    font-weight: bold;
+}
+.question span{
+    margin-right:1rem ;
+    margin-left: 1rem;
+}
+.animation{
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    font-size: larger;
+    cursor: pointer;
+}
+.rotate{
+    
+   animation: rotate .6s forwards;
+   -moz-animation: rotate .6s forwards;
+  -webkit-animation: rotate .6s forwards;
+
+
+}
+.rotate-back{
+    animation: rotateBack .4s forwards;
+    -moz-animation: rotateBack .4s forwards;
+   -webkit-animation: rotateBack .4s forwards;
+}
+.answer{
+    display: none;
+    height: 100%;
+    line-height: 1.5rem;
+    padding: 10px 0px;
+    width: 100%;
+    background-color: var(--footer-BackGround-color);
+    border-radius: 20px;
+    text-align: right;
+    
+    
+}
+.answer p{
+    display: inline-block;
+    direction: rtl;
+    text-indent: 15px;
+    font-size: large;
+    margin-right: .5rem;
+
+    
+    
+}
+.openAnswer{
+    animation: openAnswer .2s forwards linear;
+    -moz-animation: openAnswer .2s forwards linear;
+   -webkit-animation: openAnswer .2s forwards linear;
+}
+.closeAnswer{
+    animation: closeAnswer .2s forwards linear;
+    -moz-animation: closeAnswer .2s forwards linear;
+    -webkit-animation: closeAnswer .2s forwards linear;
+}
+.showText{
+    animation: showText .2s forwards linear;
+    -moz-animation: showText .2s forwards linear;
+    -webkit-animation: showText .2s forwards linear;
+}
+.hideText
+{
+    animation: hideText .2s forwards linear;
+    -moz-animation: hideText .2s forwards linear;
+    -webkit-animation: hideText .2s forwards linear;
+}
+@keyframes rotate {
+    0%{
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+
+    }
+    100%{
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+
+    }
+}
+@keyframes rotateBack {
+    0%{
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+
+    }
+    100%{
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+
+    }
+}
+@keyframes openAnswer {
+    0%{
+       
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+@keyframes showText {
+    0%{
+       
+       opacity: 0;
+    }
+    100%{
+       opacity: 1;
+    }
+}
+@keyframes closeAnswer {
+    0%{
+       
+        height: 100%;
+    }
+    100%{
+        height: 0;
+    }
+}
+@keyframes hideText {
+    0%{
+       
+       opacity: 1;
+    }
+    100%{
+       opacity: 0;
+    }
+}

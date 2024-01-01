@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Nazanin";
+    src: url(./font/Far.Nazanin-Fontjo.com/Far.Nazanin\ Bold.ttf) format(turetype);
+    font-weight: bold;
+
+}
+@font-face {
+    font-family: "Cinema";
+    src: url(./Cinema\ Font.ttf);
+}
+body{
+   font-family: "Nazanin",monospace;
+}
+.title{
+    font-family: "Cinema",monospace;
+}

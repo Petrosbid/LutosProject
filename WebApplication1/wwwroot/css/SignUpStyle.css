@@ -1,0 +1,166 @@
+body{
+    /* background: url(./Newfolder/2.jpg); */
+    background: rgb(162,197,253);
+background: linear-gradient(90deg, rgba(162,197,253,1) 50%, rgba(219,194,252,1) 100%);
+    background-size: cover;
+    background-attachment: fixed;
+   background-repeat: no-repeat;
+height: 100vh;
+width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card {
+    box-shadow: 0px 8px 13px 1px rgba(106,106,106,0.75);
+-webkit-box-shadow: 0px 8px 13px 1px rgba(106,106,106,0.75);
+-moz-box-shadow: 0px 8px 13px 1px rgba(106,106,106,0.75);
+    width: 30%;
+    height: 23rem;
+    background-color: rgb(224, 223, 223,.6);
+    display:flex ;
+    flex-direction: column;
+    border-radius: 25px;
+    align-items: center;
+
+}
+.card form{
+    width: 100%;
+height: 100%;
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  unicode-bidi: embed;
+}
+.card input{
+    background-color: rgba(255, 255, 255, 1);
+    margin:10px 0px 5px 5px;
+    width: 80%;
+    padding: 10px 7px;
+    text-align: right;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+.card input:focus{
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px gray;
+}
+button{
+    width: 17%;
+    cursor: pointer;
+    padding:  10px;
+    border-radius: 5px;
+    border: none;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+
+}
+button:hover{
+    box-shadow: 2px 2px 5px gray;
+
+}
+.card a{
+    margin-bottom: .8rem;
+    text-decoration: none;
+}
+h1{
+    text-align: center;
+    display: block;
+    width: 100%;
+margin-top: 20px;
+font-size: x-large;
+border-bottom: 1px solid rgba(69, 68, 68, 0.5);
+padding-bottom: 10px;
+}
+.register_t{
+    color:rgb(133, 133, 133);
+   transition: all .2s;
+   font-weight: bold;
+   position: relative;
+   top: 17%;
+}
+.register_t:hover{
+   color:  rgb(168, 107, 248);
+   
+}
+input::placeholder{
+    padding-right: 5px;
+}
+.flex--pass{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    max-width: 1.5rem;
+    min-height: 1.5rem;
+    margin-top: .2rem;
+    cursor: pointer;
+    z-index: 99;
+    position: fixed;
+    right: 59.5%;
+}
+.hide-pass{
+    display: none;
+}
+.hide--message{
+    animation: hideMessage 3s ease-in forwards;
+}
+.flex--aling{
+    width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#check--box{
+    width: fit-content;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    vertical-align: middle;
+    transition: var(--transition);
+   
+}
+#check--box:checked{
+    transform: rotateZ(360deg);
+    accent-color: green;
+
+}
+@keyframes hideMessage {
+    0%{
+        visibility: visible;
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
+.error--handler__username{
+    visibility: hidden;
+    position: fixed;
+    right: 43.5%;
+    top: 87%;
+    color: rgb(255, 58, 58);
+    font-weight: bold;
+    font-size: large;
+}
+.error--handler__useremail{
+    visibility: hidden;
+    position: fixed;
+    right: 43%;
+    top: 92%;
+    color: rgb(255, 58, 58);
+    font-weight: bold;
+    font-size: large;
+}
