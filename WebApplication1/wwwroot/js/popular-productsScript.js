@@ -4,25 +4,7 @@ let prev = document.querySelector(".pro-prev");
 let slide = document.getElementById("slide");
 let item = document.querySelectorAll(".item");
 
-let products=[
-    {id:1,src:"./testimage/15.PNG",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:2,src:"./testimage/Background.jpg",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:3,src:"http://via.placeholder.com/200x200?text=Product2",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:4,src:"http://via.placeholder.com/200x200?text=Product2",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:5,src:"http://via.placeholder.com/200x200?text=Product2",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:6,src:"http://via.placeholder.com/200x200?text=Product2",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:7,src:"./testimage/Background.jpg",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:8,src:"./testimage/15.PNG",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:9,src:"./testimage/Background.jpg",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:10,src:"http://via.placeholder.com/200x200?text=Product3",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:11,src:"http://via.placeholder.com/200x200?text=Product3",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:12,src:"http://via.placeholder.com/200x200?text=Product3",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:13,src:"./testimage/peakpx.jpg",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:14,src:"./testimage/peakpx.jpg",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
-    {id:15,src:"./testimage/peakpx.jpg",discription:">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در هم",price:"تومان 180" },
 
-
-]
 
 
 products.forEach((item)=>{

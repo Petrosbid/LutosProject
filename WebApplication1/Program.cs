@@ -1,8 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using WebApplication1;
-
-namespace ContosoCrafts.WebSite
+namespace WebApplication1
 {
 	public class Program
 	{

@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System.Text.Json;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplication1.Context;
 using WebApplication1.Services;
 
 namespace WebApplication1
@@ -16,7 +11,7 @@ namespace WebApplication1
 		public Startup(IConfiguration configuration) =>
 			Configuration = configuration;
 
-		public IConfiguration Configuration { get; }
+		public IConfiguration? Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
@@ -27,9 +22,36 @@ namespace WebApplication1
 			services.AddHttpClient();
 			services.AddControllers();
 			services.AddTransient<ProductService>();
+			services.AddTransient<UserService>();
+			services.AddTransient<LoginService>();
 			services.AddControllers();
-			
-		}
+            services.AddAuthentication("Cookies").AddCookie(options =>
+            {
+	            options.LoginPath = "/Login";
+                options.Cookie.Name = "PetrosLotusShop";
+				options.Cookie.MaxAge = TimeSpan.MaxValue;
+                // Additional configuration options such as ExpireTime, LoginPath, AccessDeniedPath, etc.
+            });
+            services.AddDbContext<LutosContext>(options =>
+	            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+			services.AddAuthorization();
+            //google login
+            //services
+            //    .AddAuthentication(options =>
+            //    {
+            //        options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //        options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //        options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+            //    })
+            //    .AddCookie()
+            //    .AddGoogle(options =>
+            //    {
+            //        options.ClientId = "**CLIENT ID**";
+            //        options.ClientSecret = "**CLIENT SECRET**";
+            //    });
+
+        }
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,7 +71,7 @@ namespace WebApplication1
 			app.UseStaticFiles();
 
 			app.UseRouting();
-
+			app.UseAuthentication();
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
@@ -58,21 +80,19 @@ namespace WebApplication1
 				endpoints.MapControllers();
 				endpoints.MapBlazorHub();
 				endpoints.MapControllers();
-				
-				//endpoints.MapGet("/products", (context) =>
-				//{
-				//	var products = app.ApplicationServices.GetService<ProductService>().GetProducts();
-				//	var json = JsonSerializer.Serialize(products);
-				//	return context.Response.WriteAsync(json);
-				//});
+                app.UseHttpsRedirection();
+                app.UseAuthentication();
+                //app.Run(async (context) =>
+                //{
+                //    if (context.User.Identity is { IsAuthenticated: false })
+                //    {
+                //        await context.ChallengeAsync();
+                //    }
 
-				// endpoints.MapGet("/products", (context) => 
-				// {
-				//     var products = app.ApplicationServices.GetService<JsonFileProductService>().GetProducts();
-				//     var json = JsonSerializer.Serialize<IEnumerable<Product>>(products);
-				//     return context.Response.WriteAsync(json);
-				// });
-			});
+                //    if (context.User.Identity != null)
+                //        await context.Response.WriteAsync("Hello " + context.User.Identity.Name + "!\r");
+                //});
+            });
 		}
 	}
 }

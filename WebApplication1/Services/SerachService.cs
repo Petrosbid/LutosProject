@@ -24,11 +24,11 @@
 			// Example: Elasticsearch, Azure Cognitive Search, etc.
 			// Return the search results
 			return new List<SearchResult>
-		{
+			{
 			new SearchResult { Title = "Sample Title 1", Snippet = "Sample Snippet 1", Url = "sample-url-1" },
 			new SearchResult { Title = "Sample Title 2", Snippet = "Sample Snippet 2", Url = "sample-url-2" },
             // Additional search results
-        };
+			};
 		}
 	}
 

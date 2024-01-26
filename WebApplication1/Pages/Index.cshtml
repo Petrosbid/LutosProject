@@ -1,6 +1,4 @@
 ﻿@page
-@using WebApplication1.Component
-@using WebApplication1.productAPI
 @model IndexModel
 @{
 	ViewData["Title"] = "بدلیجات لوتوس";
@@ -26,7 +24,7 @@
 	<link rel="stylesheet" href="./css/products.css">
 	<link rel="stylesheet" href="./css/footer-style.css">
 	<link rel="stylesheet" href="./css/header-style.css">
-	
+
 
 </head>
 <body>
@@ -59,7 +57,7 @@
 				<a href="#" class="catgorys__product">@category.Category</a>
 			}
 		}
-		<a href="#" class="catgorys__product">برندها</a> 
+		<a href="#" class="catgorys__product">برندها</a>
 	</div>
 
 
@@ -69,7 +67,6 @@
 			@foreach (var slideproduct in Model.SlideProducts)
 			{
 				<div class="mySlides fade">
-					<div class="numbertext">1 / 4</div>
 					<img alt="This is image" class="continer__image--slider" src="@slideproduct.Main_Image">
 					@* <div class="text">Caption Text</div> *@
 				</div>
@@ -80,7 +77,6 @@
 	</div>
 	<br>
 	<div class="dot--continer" style="text-align:center">
-
 	</div>
 	<br>
 
@@ -119,8 +115,13 @@
 			<div class="popular--products">
 				<div class="slider">
 					<div class="slide" id="slide">
-						<!-- <a class="item" href="#"><img class="popular--products__image" src="./testimage/15.PNG"><span class="popular--products__discription">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در همه</span><br><br><span class="popular--products__price">170 تومان</span></a>
-						<a class="item" href="#"><img class="popular--products__image" src="./testimage/Background.jpg"><span class="popular--products__discription">انگشتر شرح طلا ژوپینگ برای    استفااده در همه جا و استفاده بخینه و به صرفه در همه</span><br><span class="popular--products__price"></span></a>-->
+						@if (Model.PopularProducts != null)
+						{
+							@foreach (var popular in Model.PopularProducts)
+							{
+								<a class="item" href="#"><img class="popular--products__image" src="@popular.Main_Image"><span class="popular--products__discription">@popular.ProductDescription</span><br><br><span class="popular--products__price">@popular.ProductPrice</span></a>
+							}
+						}
 					</div>
 				</div>
 				<div class="btn">
