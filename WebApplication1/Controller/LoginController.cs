@@ -61,16 +61,17 @@ namespace WebApplication1.Controller
                             ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7),
                             AllowRefresh = true
                         });
-                    TempData["Message"] = "ورود موفقیت آمیز بود.";
-                    return Redirect("/");
+                    ModelState.AddModelError("success", "نام کاربری یا رمز عبور اشتباه است.");
+					return Redirect("/");
                 }
                 else
                 {
-	                ModelState.AddModelError("Logger", "نام کاربری یا رمز عبور اشتباه است.");
+	                ModelState.AddModelError("UserName", "نام کاربری یا رمز عبور اشتباه است.");
 				}
 			}
-	        return View("Login");
-        }
+	        return Redirect("/Login");
+
+		}
 
 
 	}

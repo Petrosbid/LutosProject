@@ -18,11 +18,16 @@ namespace WebApplication1.Services
 			else { return Enumerable.Empty<Myproducts>(); }
 
 		}
+		public void Addproduct(Myproducts newproducts)
+		{
+			db.ProductContext.Add(newproducts);
+			db.SaveChanges();
+		}
 		//public void AddRate(string Id, int Rate)
 		//{
 		//	IEnumerable<Myproducts> products = GetProducts();
-  //          IEnumerable<Myproducts> myproductsEnumerable = products.ToList();
-  //          var query = myproductsEnumerable.First(x => x.Productid == Id);
+		//          IEnumerable<Myproducts> myproductsEnumerable = products.ToList();
+		//          var query = myproductsEnumerable.First(x => x.Productid == Id);
 		//	if (query.Rating == null)
 		//	{
 		//		query.Rating = new int[] { Rate };

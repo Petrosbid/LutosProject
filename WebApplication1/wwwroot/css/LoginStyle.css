@@ -117,9 +117,6 @@ input::placeholder {
     margin-top: .2rem;
 }
 
-.hide-pass {
-    display: none;
-}
 
 .error--handler {
     position: relative;
@@ -129,21 +126,18 @@ input::placeholder {
 }
 
 .error--handler__success {
-    visibility: hidden;
     position: fixed;
     right: 45%;
     color: green;
 }
 
 .error--handler__username {
-    visibility: hidden;
     position: fixed;
     right: 45%;
     color: rgb(255, 93, 93);
 }
 
 .error--handler__pass {
-    visibility: hidden;
     position: fixed;
     right: 45.2%;
     color: rgb(255, 93, 93);

@@ -15,7 +15,6 @@ showPass.addEventListener("click",function(){
 })
 ///////////////////////////Data Base
 let userMessage=document.querySelector(".error--handler__username")
-let passMessage=document.querySelector(".error--handler__pass")
 let succeseeMessage=document.querySelector(".error--handler__success")
 const btn=document.querySelector(".card button")
 

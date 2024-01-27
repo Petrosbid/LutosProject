@@ -42,7 +42,7 @@ namespace WebApplication1.Models
 		[Display(Name = "اسلایدر بودن محصول")] 
 		public bool? Slider { get; set; } = false;
 
-		public virtual List<ProductComments> ProductComments { get; set; }
+		public virtual List<ProductComments>? ProductComments { get; set; }
 
 	}
 }

@@ -11,10 +11,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/font/font.css">
-	<link rel="stylesheet" href="/css/LoginStyle.css">
-	<link rel="stylesheet" href="/css/reset.css">
-	<link rel="stylesheet" href="/css/Var.css">
+	<link rel="stylesheet" href="~/font/font.css">
+	<link rel="stylesheet" href="~/css/LoginStyle.css">
+	<link rel="stylesheet" href="~/css/reset.css">
+	<link rel="stylesheet" href="~/css/Var.css">
 
 </head>
 <body>
@@ -47,13 +47,11 @@
 		<a asp-page="SignUp" class="register_t">حساب کاربری ندارید؟ ثبت نام کنید</a>
 	</div>
 <div class="error--handler">
-	<span asp-validation-for="Logger" class="error--handler__username"></span>
-	<span class="error--handler__success">ورود با موفقیت انجام شد.</span>
-
-	<br>
+		@Html.ValidationMessage("success" , new{@class = "error--handler__success"})
+	@Html.ValidationMessage("UserName" , new{@class = "error--handler__username"})
 </div>
 
-	<script src="./js/LoginScript.js"></script>
+	<script src="~/js/LoginScript.js"></script>
 
 </body>
 </html>

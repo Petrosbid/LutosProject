@@ -8,7 +8,7 @@ let ImageSliader=
 [
 {id:1,src:"./testimage/Background.jpg"},
 {id:2,src:"./testimage/peakpx.jpg"},
-{id:3,src:"./Logo/images.jpg"},
+{id:3,src:""},
 {id:4,src:"./testimage/korean-earrings-2-min.jpg"},
 
 ]

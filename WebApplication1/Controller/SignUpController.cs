@@ -25,9 +25,12 @@ namespace WebApplication1.Controller
 		[MaxLength(200)]
 		[DataType(DataType.EmailAddress)]
 		public string Email { get; set; }
+
+		public bool RememberMe { get; set; }
+
 	}
 
-
+	[Route("/SignUp")]
 	public class SignUpController : Microsoft.AspNetCore.Mvc.Controller
 	{
 		private readonly LoginService loginRepository;
@@ -36,7 +39,7 @@ namespace WebApplication1.Controller
 		{
 			loginRepository = new LoginService(userService);
 		}
-		
+		[HttpPost]
 		public async Task<ActionResult> Signup(SignUpViewModel model)
 		{
 			if (ModelState.IsValid)
@@ -51,7 +54,7 @@ namespace WebApplication1.Controller
 						new Claim(ClaimTypes.Role , user.Role),
 						new Claim(ClaimTypes.Email , user.Email),
 					};
-
+					bool IsPersistent = model.RememberMe;
 					var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 					await HttpContext.SignInAsync(
 						CookieAuthenticationDefaults.AuthenticationScheme,
@@ -59,7 +62,7 @@ namespace WebApplication1.Controller
 						new AuthenticationProperties
 						{
 							IssuedUtc = DateTimeOffset.Now,
-							IsPersistent = false,
+							IsPersistent = IsPersistent,
 							ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7),
 							AllowRefresh = true
 						});
@@ -71,7 +74,7 @@ namespace WebApplication1.Controller
 					ModelState.AddModelError("Username", "نام کاربری انتخاب شده در حال حاضر استفاده شده است.");
 				}
 			}
-			return View("Signup");
+			return View();
 		}
 	}
 }
