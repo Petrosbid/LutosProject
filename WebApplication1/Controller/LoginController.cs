@@ -61,7 +61,8 @@ namespace WebApplication1.Controller
                             ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7),
                             AllowRefresh = true
                         });
-                    ModelState.AddModelError("success", "نام کاربری یا رمز عبور اشتباه است.");
+                    Response.Cookies.Append("username" , model.UserName);
+					ModelState.AddModelError("success", "نام کاربری یا رمز عبور اشتباه است.");
 					return Redirect("/");
                 }
                 else

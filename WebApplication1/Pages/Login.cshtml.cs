@@ -5,14 +5,12 @@ namespace WebApplication1.Pages
 {
 	public class LoginModel : PageModel
 	{
-		public UserService UserService;
 		public ILogger<LoginModel>? Logger { get; }
 
-		public LoginModel(ILogger<LoginModel> logger, UserService UserService)
+
+		public LoginModel(ILogger<LoginModel> logger)
         {
             Logger = logger;
-            this.UserService = UserService;
         }
-       
     }
 }

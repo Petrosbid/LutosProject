@@ -1,4 +1,5 @@
 ﻿using WebApplication1.Context;
+using WebApplication1.Controller;
 using WebApplication1.Models;
 
 namespace WebApplication1.Services
@@ -23,6 +24,15 @@ namespace WebApplication1.Services
 			db.ProductContext.Add(newproducts);
 			db.SaveChanges();
 		}
+
+		public void Category(string category)
+		{
+			var cattegory = GetProducts().Where(x => x.Category == category).ToList();
+			CategoryProductsViewModel view = new CategoryProductsViewModel()
+				{ Category = category, Products = cattegory };
+			
+		}
+
 		//public void AddRate(string Id, int Rate)
 		//{
 		//	IEnumerable<Myproducts> products = GetProducts();

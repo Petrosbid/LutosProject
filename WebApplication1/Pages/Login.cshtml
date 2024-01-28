@@ -1,4 +1,5 @@
 ﻿@page
+@using static WebApplication1.Controller.LoginController;
 @model LoginModel
 @{
 	Layout = null;
@@ -47,8 +48,10 @@
 		<a asp-page="SignUp" class="register_t">حساب کاربری ندارید؟ ثبت نام کنید</a>
 	</div>
 <div class="error--handler">
-		@Html.ValidationMessage("success" , new{@class = "error--handler__success"})
-	@Html.ValidationMessage("UserName" , new{@class = "error--handler__username"})
+	@Html.ValidationMessage("Error", "", new { @class = "error--handler__success"  })
+	@Html.ValidationMessage("UserName", "", new { @class = "error--handler__username" })
+
+
 </div>
 
 	<script src="~/js/LoginScript.js"></script>

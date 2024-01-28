@@ -1,0 +1,105 @@
+body{
+    height: 100vh;
+}
+.img--prooduct{
+width: 40%;
+height: 500px;
+float: right;
+
+}
+.flex--row{
+    margin: 10px 0 0 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+}
+.line{
+    position: absolute;
+   background-color: black;
+   height: 1px;
+   top: 62px;
+    left: 72px;
+    width: 42.5%;
+}
+.caption{
+    width: 40%;
+    height: 460px;
+    margin-left: 70px;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: space-between;
+    border:1px black solid;
+    padding: 20px;
+}
+.Product--name{
+    align-self: center;
+}
+.buy{
+    /* border: 1px black solid; */
+    font-size: medium;
+    padding: 10px;
+    width: 132px;
+    text-align: center;
+    background-color: #60BFC1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s linear;
+    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: 568px;
+    border-radius: 15px;
+}
+.icon{
+    width: 23px;
+    height: 23px;
+    margin-left: 10px;
+}
+
+.buy:hover{
+    transform: translateY(-.2rem);
+    box-shadow: var(--box-shadow);
+}
+.like--icon{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    transition:transform .2s linear ;
+    -webkit-transition: var(--transition);
+}
+.like--icon:hover{
+    transform:translateY(-.1rem);
+}
+.red--icon{
+    fill: red;
+    color: red;
+    
+}
+.flex{
+    display: flex;
+    width:39.5%;
+    height: 100px;
+    /* background-color: #60BFC1; */
+    float: right;
+    position: relative;
+    right: 10px;
+    top: -26px;
+    justify-content: space-between;
+}
+.dis{
+    direction: rtl;
+width: 80%;
+    /* word-break: break-all; */
+    /* word-wrap: break-word; */
+}
+.existence{
+    color: green;
+}

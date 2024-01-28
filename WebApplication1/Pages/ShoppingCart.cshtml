@@ -1,0 +1,49 @@
+﻿@page
+@model ShoppingCartModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Var.css">
+    <link rel="stylesheet" href="~/font/font.css">
+    <link rel="stylesheet" href="~/css/reset.css">
+    <link rel="stylesheet" href="~/css/ShoppingCartStyle.css">
+    <title>سبد خرید</title>
+</head>
+<body>
+    <section class="container content-section">
+	    <h2 class="section-header title">سبد خرید</h2>
+	    <div class="cart-row">
+		    <span class="cart-items cart-header cart-column">کالا</span>
+		    <span class="cart-price cart-header cart-column">قیمت</span>
+		    <span class="cart-quantity cart-header cart-column">تعداد</span>
+	    </div>
+	    @foreach (var product in Model.Cart())
+	    {
+		    <img class="cart-item-image" src="@product.Main_Image" alt="">
+		    <span class="cart-item-title">@product.ProductName</span>
+		    <label for="">تومان</label>
+		    <span name="price" class="cart-item-price">@product.ProductPrice</span>
+		    <input class="cart-quantity-input" type="number" max="5" min="1" value="1">
+		    <button class="btn btn-danger" onclick=@Model.DeleteItem(product , Model.FindUser())>حذف</button>
+	    }
+        </section>
+
+
+    <section class="content">
+        <div class="cart-total">
+            <strong class="cart-total-title"> مجموع: </strong>
+
+            <span class="cart-total-price">0</span>
+            <span>تومان</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" id="remove-all-products" type="button">
+            پرداخت
+        </button>
+    </section>
+    <script src="~/js/ShoppingCartScript.js"></script>
+</body>
+</html>

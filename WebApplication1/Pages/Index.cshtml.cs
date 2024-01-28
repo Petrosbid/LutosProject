@@ -66,74 +66,15 @@ namespace WebApplication1.Pages
         {
             Products = productService.GetProducts();
         }
-		public IEnumerable<Myproducts>? PopularProducts { get; private set; }
+        public IEnumerable<Myproducts>? PopularProducts { get; private set; }
 
-		public void GetPopularProducts()
+        public void GetPopularProducts()
         {
             var products = productService.GetProducts();
-			PopularProducts = products.OrderByDescending(p => p.Liked).Take(15).ToList();
-            
+            PopularProducts = products.OrderByDescending(p => p.Liked).Take(15).ToList();
+
         }
 
-		public void AddingProducts()
-		{
-			Myproducts newproduct1 = new()
-			{
-				Available = true,
-				Category = null,
-				Color = null,
-				Main_Image = "https://rozalinstore.com/wp-content/uploads/2022/10/roz6-compressed.jpg",
-				ProductDescription = null,
-				Liked = null,
-				ProductName = "asda",
-				ProductPrice = "21413",
-				Slider = true,
-				ProductComments = null,
-			};
-			productService.Addproduct(newproduct1);
-			Myproducts newproduct2 = new()
-			{
-				Available = true,
-				Category = null,
-				Color = null,
-				Main_Image = "https://rozalinstore.com/wp-content/uploads/2023/01/off-org-min2.jpg",
-				ProductDescription = null,
-				Liked = null,
-				ProductName = "asda",
-				ProductPrice = "13434 تومان",
-				Slider = true,
-				ProductComments = null,
-			};
-			productService.Addproduct(newproduct2);
-			Myproducts newproduct3 = new()
-			{
-				Available = true,
-				Category = null,
-				Color = null,
-				Main_Image = "https://rozalinstore.com/wp-content/uploads/2022/03/slide-1asli.jpg",
-				ProductDescription = null,
-				Liked = null,
-				ProductName = "asda",
-				ProductPrice = "13434 تومان",
-				Slider = true,
-				ProductComments = null,
-			};
-			productService.Addproduct(newproduct3);
-			Myproducts newproduct4 = new()
-			{
-				Available = true,
-				Category = null,
-				Color = null,
-				Main_Image = "https://rozalinstore.com/wp-content/uploads/2022/03/slide2222-Copy.jpg",
-				ProductDescription = null,
-				Liked = null,
-				ProductName = "asda",
-				ProductPrice = "13434 تومان",
-				Slider = true,
-				ProductComments = null,
-			};
-			productService.Addproduct(newproduct4);
-
-		}
-	}
+      
+    }
 }

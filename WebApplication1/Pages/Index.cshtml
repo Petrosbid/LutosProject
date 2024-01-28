@@ -36,8 +36,7 @@
 		{
 			@foreach (var category in Model.CategoryProducts)
 			{
-				<a href="#" class="box--categorys"><div class="catgorys__product--phone">@category.Category</div></a>
-
+				<a asp-controller="ProductsPage" asp-action="Category" asp-route-category="@category.Category" class="box--categorys"><div class="catgorys__product--phone">@category.Category</div></a>
 			}
 		}
 	</div>
@@ -91,7 +90,7 @@
 						@if (category.Category != null && category.Category != "")
 						{
 							<div class="box--product">
-								<a href="#" class="link--product">
+								<a asp-controller="ProductsPage" class="link--product">
 									<img class="img--product" src="@Model.SelectByCategory(category.Category)" alt="This is Product">
 									<span class="name--product">@category.Category</span>
 								</a>

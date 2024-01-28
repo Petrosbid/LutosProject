@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.CookiePolicy;
+using Microsoft.EntityFrameworkCore;
 using WebApplication1.Context;
 using WebApplication1.Services;
 
@@ -29,10 +30,13 @@ namespace WebApplication1
             {
 	            options.LoginPath = "/Login";
                 options.Cookie.Name = "PetrosLotusShop";
-				options.Cookie.MaxAge = TimeSpan.MaxValue;
+                options.Cookie.MaxAge = TimeSpan.MaxValue;
+                options.LogoutPath = "/Logout";
+				
                 // Additional configuration options such as ExpireTime, LoginPath, AccessDeniedPath, etc.
             });
-            services.AddDbContext<LutosContext>(options =>
+
+			services.AddDbContext<LutosContext>(options =>
 	            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 			services.AddAuthorization();
